@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GJ Angeles Construction | Design-Build Architectural, Engineering &amp; Construction Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E1B18;
+    --ink-2:#2A2621;
+    --paper:#E4E0D4;
+    --paper-2:#D8D3C4;
+    --blue:#123C5C;
+    --blue-2:#0D2E47;
+    --cyan:#8FD3F4;
+    --amber:#E8A33D;
+    --amber-dark:#B67322;
+    --steel:#6B6A62;
+    --white:#F7F5EF;
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    overflow-x:hidden;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  h1,h2,h3{
+    font-family:'Bebas Neue', sans-serif;
+    letter-spacing:0.02em;
+    line-height:0.95;
+    font-weight:400;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+
+  /* reveal-on-scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    padding:22px 0;
+    transition:background 0.35s ease, padding 0.35s ease, border-color 0.35s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(30,27,24,0.94);
+    padding:14px 0;
+    border-color:rgba(255,255,255,0.08);
+    backdrop-filter:blur(6px);
+  }
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand-mark{
+    width:42px; height:42px;
+    border:2px solid var(--amber);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Bebas Neue', sans-serif;
+    font-size:20px;
+    color:var(--amber);
+    flex-shrink:0;
+  }
+  .brand-name{
+    color:var(--white);
+    font-family:'Bebas Neue', sans-serif;
+    font-size:19px;
+    letter-spacing:0.04em;
+    line-height:1.05;
+  }
+  .brand-name span{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9px;
+    color:var(--cyan);
+    letter-spacing:0.15em;
+    font-weight:500;
+    margin-top:2px;
+  }
+  .nav-links{
+    display:flex;
+    gap:34px;
+    align-items:center;
+  }
+  .nav-links a{
+    color:var(--paper);
+    font-size:14px;
+    font-weight:500;
+    position:relative;
+    padding:4px 0;
+  }
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0; bottom:0;
+    width:0; height:1px;
+    background:var(--amber);
+    transition:width 0.3s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    border:1px solid var(--amber);
+    color:var(--amber) !important;
+    padding:9px 18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.05em;
+    transition:background 0.25s ease, color 0.25s ease;
+  }
+  .nav-cta:hover{
+    background:var(--amber);
+    color:var(--ink) !important;
+  }
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--white);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:140px 0 80px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(143,211,244,0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143,211,244,0.055) 1px, transparent 1px);
+    background-size:44px 44px;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 85%);
+  }
+  .hero .wrap{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:40px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    color:var(--amber);
+    margin-bottom:22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow::before{
+    content:'';
+    width:22px; height:1px;
+    background:var(--amber);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(52px, 7vw, 96px);
+    color:var(--white);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--cyan);
+  }
+  .hero-sub{
+    max-width:440px;
+    margin-top:24px;
+    font-size:17px;
+    line-height:1.65;
+    color:#C9C6BC;
+  }
+  .hero-actions{
+    margin-top:38px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 28px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.04em;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary{
+    background:var(--amber);
+    color:var(--ink);
+  }
+  .btn-primary:hover{background:var(--white); transform:translateY(-2px);}
+  .btn-ghost{
+    border-color:rgba(247,245,239,0.35);
+    color:var(--white);
+  }
+  .btn-ghost:hover{border-color:var(--cyan); color:var(--cyan); transform:translateY(-2px);}
+
+  .hero-art{
+    position:relative;
+    aspect-ratio:4/5;
+    opacity:0;
+    transform:scale(1.04);
+    animation:heroPhotoIn 1.1s ease forwards 0.2s;
+  }
+  @keyframes heroPhotoIn{to{opacity:1; transform:scale(1);}}
+  @media (prefers-reduced-motion: reduce){
+    .hero-art{opacity:1; transform:none; animation:none;}
+  }
+  .hero-art svg{width:100%; height:100%;}
+  .hero-photo-frame{
+    position:relative;
+    width:100%; height:100%;
+    border:1px solid rgba(143,211,244,0.35);
+    padding:14px;
+  }
+  .hero-photo-frame img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    filter:saturate(1.02) contrast(1.03);
+  }
+  .hero-photo-frame::before,
+  .hero-photo-frame::after{
+    content:'';
+    position:absolute;
+    width:22px; height:22px;
+    border:2px solid var(--amber);
+  }
+  .hero-photo-frame::before{top:-1px; left:-1px; border-right:none; border-bottom:none;}
+  .hero-photo-frame::after{bottom:-1px; right:-1px; border-left:none; border-top:none;}
+  .hero-photo-tag{
+    position:absolute;
+    bottom:28px; left:28px;
+    background:var(--ink);
+    border:1px solid var(--cyan);
+    padding:8px 14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    color:var(--cyan);
+    text-transform:uppercase;
+  }
+  .blueprint-line{
+    fill:none;
+    stroke:var(--cyan);
+    stroke-width:1.6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:2000;
+    stroke-dashoffset:2000;
+    animation:draw 3.2s ease forwards 0.4s;
+  }
+  .blueprint-fill{
+    fill:var(--amber);
+    opacity:0;
+    animation:fadein 1s ease forwards 3s;
+  }
+  .blueprint-dim{
+    stroke:rgba(143,211,244,0.5);
+    stroke-width:1;
+    stroke-dasharray:4 4;
+    opacity:0;
+    animation:fadein 0.8s ease forwards 3.4s;
+  }
+  .blueprint-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9px;
+    fill:var(--cyan);
+    opacity:0;
+    animation:fadein 0.8s ease forwards 3.6s;
+  }
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes fadein{to{opacity:1;}}
+  @media (prefers-reduced-motion: reduce){
+    .blueprint-line{stroke-dashoffset:0; animation:none;}
+    .blueprint-fill,.blueprint-dim,.blueprint-label{opacity:1; animation:none;}
+  }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:36px; left:32px;
+    display:flex; align-items:center; gap:10px;
+    color:#94918A;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    z-index:2;
+  }
+  .scroll-cue .line{
+    width:1px; height:34px;
+    background:linear-gradient(var(--amber), transparent);
+    animation:scrolldrop 1.8s ease infinite;
+  }
+  @keyframes scrolldrop{
+    0%{transform:scaleY(0); transform-origin:top;}
+    50%{transform:scaleY(1); transform-origin:top;}
+    51%{transform-origin:bottom;}
+    100%{transform:scaleY(0); transform-origin:bottom;}
+  }
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{
+    background:var(--blue-2);
+    color:var(--white);
+    padding:28px 0;
+  }
+  .stats .wrap{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .stat{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+  }
+  .stat b{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:34px;
+    color:var(--cyan);
+  }
+  .stat span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:#9FB9CB;
+    text-transform:uppercase;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  section{padding:110px 0;}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:30px;
+    margin-bottom:60px;
+    border-bottom:1px solid rgba(30,27,24,0.15);
+    padding-bottom:26px;
+  }
+  .section-head .eyebrow{color:var(--amber-dark);}
+  .section-head h2{
+    font-size:clamp(38px, 5vw, 58px);
+    margin-top:10px;
+  }
+  .section-head p{
+    max-width:320px;
+    font-size:14.5px;
+    color:var(--steel);
+    line-height:1.6;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--paper);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:rgba(30,27,24,0.15);
+    border:1px solid rgba(30,27,24,0.15);
+  }
+  .service-card{
+    background:var(--paper);
+    padding:32px 26px;
+    transition:background 0.3s ease, transform 0.3s ease;
+    position:relative;
+  }
+  .service-card:hover{
+    background:var(--white);
+    transform:translateY(-6px);
+  }
+  .service-index{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--amber-dark);
+    letter-spacing:0.05em;
+  }
+  .service-card h3{
+    font-size:26px;
+    margin:18px 0 12px;
+    text-transform:uppercase;
+  }
+  .service-card p{
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--steel);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process{
+    background:var(--blue);
+    color:var(--white);
+    position:relative;
+    overflow:hidden;
+  }
+  .process::before{
+    content:'';
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(143,211,244,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143,211,244,0.06) 1px, transparent 1px);
+    background-size:38px 38px;
+  }
+  .process .wrap{position:relative; z-index:2;}
+  .process .section-head{border-color:rgba(247,245,239,0.18);}
+  .process .section-head .eyebrow{color:var(--cyan);}
+  .process .section-head p{color:#B7CBDA;}
+  .timeline{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:24px;
+    position:relative;
+  }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    top:19px; left:0; right:0;
+    height:1px;
+    background:rgba(143,211,244,0.3);
+  }
+  .step{
+    position:relative;
+  }
+  .step-num{
+    width:38px; height:38px;
+    border:1px solid var(--cyan);
+    color:var(--cyan);
+    background:var(--blue);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    position:relative;
+    z-index:1;
+    margin-bottom:22px;
+  }
+  .step h3{
+    font-size:20px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .step p{
+    font-size:13px;
+    color:#B7CBDA;
+    line-height:1.55;
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .projects{background:var(--paper);}
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px;
+  }
+  .project-card{
+    background:var(--white);
+    border:1px solid rgba(30,27,24,0.14);
+    overflow:hidden;
+    transition:box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .project-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 30px rgba(30,27,24,0.1);
+  }
+  .project-art{
+    aspect-ratio:4/3;
+    background:var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .project-art svg{width:62%;}
+  .project-photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform 0.5s ease;
+  }
+  .project-card:hover .project-photo img{transform:scale(1.06);}
+  .project-tag{
+    position:absolute; top:14px; left:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.06em;
+    color:var(--amber);
+    border:1px solid var(--amber);
+    padding:4px 9px;
+    text-transform:uppercase;
+  }
+  .project-info{padding:22px 24px 28px;}
+  .project-info h3{
+    font-size:24px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .project-info p{
+    font-size:13px;
+    color:var(--steel);
+    line-height:1.55;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    background:var(--ink);
+    color:var(--white);
+  }
+  .about .wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .about .eyebrow{color:var(--cyan);}
+  .about h2{
+    font-size:clamp(36px, 5vw, 50px);
+    margin:14px 0 22px;
+  }
+  .about p{
+    font-size:15px;
+    line-height:1.75;
+    color:#C9C6BC;
+    max-width:480px;
+  }
+  .about-facts{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px 30px;
+  }
+  .fact{
+    border-top:1px solid rgba(247,245,239,0.2);
+    padding-top:14px;
+  }
+  .fact b{
+    display:block;
+    font-family:'Bebas Neue', sans-serif;
+    font-size:15px;
+    color:var(--amber);
+    letter-spacing:0.03em;
+    margin-bottom:4px;
+  }
+  .fact span{
+    font-size:12.5px;
+    color:#9C9A92;
+  }
+  .about-art{aspect-ratio:1/1;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--paper);}
+  .contact .wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:60px;
+  }
+  .contact-info h2{
+    font-size:clamp(38px, 5vw, 54px);
+    margin:10px 0 20px;
+  }
+  .contact-info p{
+    font-size:14.5px;
+    color:var(--steel);
+    line-height:1.6;
+    max-width:360px;
+    margin-bottom:30px;
+  }
+  .contact-line{
+    display:flex;
+    gap:14px;
+    padding:16px 0;
+    border-top:1px solid rgba(30,27,24,0.15);
+  }
+  .contact-line:last-child{border-bottom:1px solid rgba(30,27,24,0.15);}
+  .contact-line .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--amber-dark);
+    letter-spacing:0.05em;
+    width:90px;
+    flex-shrink:0;
+    text-transform:uppercase;
+    padding-top:2px;
+  }
+  .contact-line .value{
+    font-size:14.5px;
+    line-height:1.5;
+  }
+  .contact-line .value small{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    color:var(--amber-dark);
+    margin-top:4px;
+  }
+  .contact-form{
+    background:var(--white);
+    border:1px solid rgba(30,27,24,0.15);
+    padding:38px;
+  }
+  .contact-form h3{
+    font-size:22px;
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .form-field{margin-bottom:16px;}
+  .form-field label{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--steel);
+    margin-bottom:7px;
+  }
+  .form-field input, .form-field select, .form-field textarea{
+    width:100%;
+    border:1px solid rgba(30,27,24,0.25);
+    background:var(--paper);
+    padding:12px 13px;
+    font-family:'Inter', sans-serif;
+    font-size:14px;
+    color:var(--ink);
+    transition:border-color 0.2s ease;
+  }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus{
+    outline:none;
+    border-color:var(--amber-dark);
+  }
+  .form-field textarea{resize:vertical; min-height:90px;}
+  .form-msg{
+    display:none;
+    margin-top:16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--amber-dark);
+    border:1px solid var(--amber-dark);
+    padding:12px 14px;
+  }
+  .form-msg.show{display:block;}
+  .field-error{
+    color:#B0402E;
+    font-size:11.5px;
+    margin-top:5px;
+    display:none;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .field-error.show{display:block;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink-2);
+    color:#9C9A92;
+    padding:44px 0 30px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .footer-brand{
+    display:flex; align-items:center; gap:10px;
+    color:var(--white);
+    font-family:'Bebas Neue', sans-serif;
+    font-size:16px;
+  }
+  .footer-brand .brand-mark{width:32px; height:32px; font-size:15px;}
+  footer .foot-links{display:flex; gap:26px;}
+  footer .foot-links a{font-size:12.5px;}
+  footer .foot-links a:hover{color:var(--amber);}
+  .foot-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.03em;
+    color:#6B6A62;
+    margin-top:24px;
+    text-align:center;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .hero .wrap{grid-template-columns:1fr; text-align:left;}
+    .hero-art{max-width:400px; margin-top:20px;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .timeline{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+    .timeline::before{display:none;}
+    .project-grid{grid-template-columns:repeat(2,1fr);}
+    .about .wrap{grid-template-columns:1fr;}
+    .about-art{max-width:340px; margin:0 auto;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .nav-toggle{display:block; background:none; border:1px solid var(--paper); color:var(--paper); padding:8px 12px; font-family:'IBM Plex Mono',monospace; font-size:12px;}
+    .stats .wrap{flex-direction:column; gap:14px;}
+  }
+  @media (max-width: 620px){
+    .service-grid{grid-template-columns:1fr;}
+    .timeline{grid-template-columns:1fr;}
+    .project-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    section{padding:74px 0;}
+    .hero{padding-top:120px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <div class="brand">
+      <div class="brand-mark">GJ</div>
+      <div class="brand-name">ANGELES CONSTRUCTION<span>DESIGN &middot; BUILD &middot; CABANATUAN CITY</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </div>
+    <button class="nav-toggle" id="navToggle">MENU</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow hero-eyebrow">Design-Build &middot; Cabanatuan City, Nueva Ecija</div>
+      <h1>WE BUILD<br>WHAT WE<br><em>DRAFT.</em></h1>
+      <p class="hero-sub">GJ Angeles Construction plans, engineers, and builds residential and commercial projects across Nueva Ecija and Central Luzon &mdash; one integrated team from first sketch to final walkthrough.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Get a Quote &rarr;</a>
+        <a href="#projects" class="btn btn-ghost">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-photo-frame">
+        <img src="images/hero-house.jpg" alt="Two-storey contemporary residence built by GJ Angeles Construction">
+        <div class="hero-photo-tag">Recently Completed &middot; Cabanatuan City</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="line"></span>SCROLL</div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>20+</b><span>Engineers &amp; Builders</span></div>
+    <div class="stat"><b>Design&ndash;Build</b><span>One Team, Start To Finish</span></div>
+    <div class="stat"><b>Res. + Comm.</b><span>Residential &amp; Commercial</span></div>
+    <div class="stat"><b>Nueva Ecija</b><span>&amp; Central Luzon</span></div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">What We Do</div>
+        <h2>Built-In Services</h2>
+      </div>
+      <p>From architectural drawings to the final coat of paint &mdash; every discipline your project needs, under one roof.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <div class="service-index">SHEET 01</div>
+        <h3>Design &amp; Engineering</h3>
+        <p>Architectural planning, structural engineering, and permit-ready drawings tailored to your site and budget.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">SHEET 02</div>
+        <h3>Residential Construction</h3>
+        <p>Custom homes, farmhouses, and renovations built to withstand daily life and Central Luzon weather.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">SHEET 03</div>
+        <h3>Commercial Construction</h3>
+        <p>Clinics, retail spaces, and commercial buildings delivered on schedule without cutting corners.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-index">SHEET 04</div>
+        <h3>Project Management</h3>
+        <p>On-site supervision, scheduling, and quality control so your project stays on time and on budget.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">How We Work</div>
+        <h2>Ground Up, Step By Step</h2>
+      </div>
+      <p>A design-build process means one accountable team, from the first site visit to the day we hand you the keys.</p>
+    </div>
+    <div class="timeline">
+      <div class="step reveal"><div class="step-num">01</div><h3>Consult</h3><p>Site visit, needs assessment, and initial budget scoping.</p></div>
+      <div class="step reveal"><div class="step-num">02</div><h3>Design</h3><p>Architectural and structural engineering drawings prepared.</p></div>
+      <div class="step reveal"><div class="step-num">03</div><h3>Permit</h3><p>We secure the building permits your project requires.</p></div>
+      <div class="step reveal"><div class="step-num">04</div><h3>Build</h3><p>On-site construction with continuous supervision.</p></div>
+      <div class="step reveal"><div class="step-num">05</div><h3>Handover</h3><p>Final walkthrough, punch list, and project turnover.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow">Recent Work</div>
+        <h2>From The Field</h2>
+      </div>
+      <p>Real projects from our team &mdash; from design renders through the day we hand over the keys.</p>
+    </div>
+      <div class="project-card reveal">
+        <div class="project-art project-photo">
+          <span class="project-tag">Residential</span>
+          <img src="images/project-duplex.jpg" alt="Modern two-storey duplex residence completed by GJ Angeles Construction">
+        </div>
+        <div class="project-info">
+          <h3>Modern Duplex Residence</h3>
+          <p>A two-storey home with a black-and-timber facade, handed over to the family on completion day.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-art project-photo">
+          <span class="project-tag">Residential</span>
+          <img src="images/project-pool-bungalow.jpg" alt="Single-storey bungalow with private pool built by GJ Angeles Construction">
+        </div>
+        <div class="project-info">
+          <h3>Bungalow With Private Pool</h3>
+          <p>A single-storey residence built around a private pool and covered outdoor living area.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-art project-photo">
+          <span class="project-tag">Concept Render</span>
+          <img src="images/project-concept-render.jpg" alt="3D architectural design render of a contemporary flat-roof home">
+        </div>
+        <div class="project-info">
+          <h3>Design Concept Render</h3>
+          <p>A 3D visualization from our design phase, prepared before ground is ever broken.</p>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-art project-photo">
+          <span class="project-tag">Turnover Day</span>
+          <img src="images/project-turnover.jpg" alt="GJ Angeles Construction handing over keys to a client family">
+        </div>
+        <div class="project-info">
+          <h3>Client Turnover</h3>
+          <p>The moment every project is building toward &mdash; keys in hand, project complete.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Who We Are</div>
+      <h2>Based In Cabanatuan City. Built For Central Luzon.</h2>
+      <p>GJ Angeles Construction is a design-build architectural, engineering, and construction firm serving Nueva Ecija and the wider Central Luzon region. Our team of engineers, architects, and skilled builders handles projects from first drawing to final handover &mdash; so clients work with one accountable team instead of juggling separate contractors.</p>
+      <div class="about-facts">
+        <div class="fact"><b>20&ndash;49</b><span>Team members</span></div>
+        <div class="fact"><b>Residential</b><span>Homes &amp; farm houses</span></div>
+        <div class="fact"><b>Commercial</b><span>Clinics, retail &amp; offices</span></div>
+        <div class="fact"><b>Full-Service</b><span>Design, permits, build</span></div>
+      </div>
+    </div>
+    <div class="about-art">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="40" y="40" width="320" height="320" fill="none" stroke="#8FD3F4" stroke-width="1" opacity="0.25"/>
+        <polygon points="75,180 200,110 325,180" fill="#0D2E47"/>
+        <polyline points="75,180 200,110 325,180" fill="none" stroke="#8FD3F4" stroke-width="1.6"/>
+        <line x1="112" y1="158" x2="288" y2="158" stroke="#8FD3F4" stroke-width="0.7" opacity="0.5"/>
+        <line x1="150" y1="135" x2="250" y2="135" stroke="#8FD3F4" stroke-width="0.7" opacity="0.5"/>
+        <rect x="262" y="88" width="16" height="46" fill="#1E1B18" stroke="#8FD3F4" stroke-width="1.2"/>
+        <rect x="90" y="180" width="220" height="190" fill="none" stroke="#8FD3F4" stroke-width="1.6"/>
+        <line x1="90" y1="270" x2="310" y2="270" stroke="#8FD3F4" stroke-width="1" opacity="0.5"/>
+        <rect x="115" y="200" width="30" height="36" fill="#E8A33D" opacity="0.85" stroke="#1E1B18" stroke-width="1.4"/>
+        <line x1="130" y1="200" x2="130" y2="236" stroke="#1E1B18" stroke-width="1.2"/>
+        <line x1="115" y1="218" x2="145" y2="218" stroke="#1E1B18" stroke-width="1.2"/>
+        <rect x="185" y="200" width="30" height="36" fill="#8FD3F4" opacity="0.2" stroke="#1E1B18" stroke-width="1.4"/>
+        <line x1="200" y1="200" x2="200" y2="236" stroke="#1E1B18" stroke-width="1.2"/>
+        <line x1="185" y1="218" x2="215" y2="218" stroke="#1E1B18" stroke-width="1.2"/>
+        <rect x="255" y="200" width="30" height="36" fill="#E8A33D" opacity="0.55" stroke="#1E1B18" stroke-width="1.4"/>
+        <line x1="270" y1="200" x2="270" y2="236" stroke="#1E1B18" stroke-width="1.2"/>
+        <line x1="255" y1="218" x2="285" y2="218" stroke="#1E1B18" stroke-width="1.2"/>
+        <rect x="110" y="292" width="34" height="44" fill="#8FD3F4" opacity="0.2" stroke="#1E1B18" stroke-width="1.4"/>
+        <line x1="127" y1="292" x2="127" y2="336" stroke="#1E1B18" stroke-width="1.2"/>
+        <line x1="110" y1="314" x2="144" y2="314" stroke="#1E1B18" stroke-width="1.2"/>
+        <rect x="256" y="292" width="34" height="44" fill="#8FD3F4" opacity="0.2" stroke="#1E1B18" stroke-width="1.4"/>
+        <line x1="273" y1="292" x2="273" y2="336" stroke="#1E1B18" stroke-width="1.2"/>
+        <line x1="256" y1="314" x2="290" y2="314" stroke="#1E1B18" stroke-width="1.2"/>
+        <rect x="182" y="296" width="36" height="74" fill="#1E1B18" stroke="#8FD3F4" stroke-width="1.4"/>
+        <path d="M182,296 Q200,282 218,296" fill="none" stroke="#8FD3F4" stroke-width="1.2"/>
+        <line x1="182" y1="322" x2="218" y2="322" stroke="#8FD3F4" stroke-width="0.8"/>
+        <line x1="182" y1="348" x2="218" y2="348" stroke="#8FD3F4" stroke-width="0.8"/>
+        <circle cx="212" cy="335" r="1.6" fill="#E8A33D"/>
+        <line x1="60" y1="378" x2="340" y2="378" stroke="#8FD3F4" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.5"/>
+        <path d="M52,378 C52,355 44,345 50,320" fill="none" stroke="#8FD3F4" stroke-width="1" opacity="0.6"/>
+        <circle cx="50" cy="320" r="18" fill="#0D2E47" opacity="0.6"/>
+        <circle cx="38" cy="335" r="14" fill="#0D2E47" opacity="0.6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-info reveal">
+      <div class="eyebrow">Let's Build</div>
+      <h2>Start Your Project</h2>
+      <p>Tell us about your site and what you're planning to build. We'll follow up to schedule a consultation.</p>
+      <div class="contact-line">
+        <div class="label">Location</div>
+        <div class="value">579 Diversion Rd<br>Cabanatuan City, Nueva Ecija<br><small>PLEASE CONFIRM ADDRESS BEFORE PUBLISHING</small></div>
+      </div>
+      <div class="contact-line">
+        <div class="label">Phone</div>
+        <div class="value">[Add phone number]<br><small>PLACEHOLDER &mdash; UPDATE BEFORE LAUNCH</small></div>
+      </div>
+      <div class="contact-line">
+        <div class="label">Email</div>
+        <div class="value">[Add email address]<br><small>PLACEHOLDER &mdash; UPDATE BEFORE LAUNCH</small></div>
+      </div>
+      <div class="contact-line">
+        <div class="label">Hours</div>
+        <div class="value">Mon &ndash; Sat, 8:00 AM &ndash; 5:00 PM</div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <h3>Request A Quote</h3>
+      <form id="quoteForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fname">Full name</label>
+            <input type="text" id="fname" name="fname" placeholder="Juan Dela Cruz">
+            <div class="field-error" id="err-fname">Enter your full name.</div>
+          </div>
+          <div class="form-field">
+            <label for="fphone">Phone</label>
+            <input type="tel" id="fphone" name="fphone" placeholder="0917 000 0000">
+            <div class="field-error" id="err-fphone">Enter a contact number.</div>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="femail" placeholder="name@email.com">
+          <div class="field-error" id="err-femail">Enter a valid email address.</div>
+        </div>
+        <div class="form-field">
+          <label for="ftype">Project type</label>
+          <select id="ftype" name="ftype">
+            <option value="">Select project type</option>
+            <option>Residential construction</option>
+            <option>Commercial construction</option>
+            <option>Design &amp; engineering only</option>
+            <option>Renovation</option>
+            <option>Other</option>
+          </select>
+          <div class="field-error" id="err-ftype">Select a project type.</div>
+        </div>
+        <div class="form-field">
+          <label for="fmsg">Project details</label>
+          <textarea id="fmsg" name="fmsg" placeholder="Location, approximate size, and timeline"></textarea>
+          <div class="field-error" id="err-fmsg">Tell us a bit about your project.</div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Request &rarr;</button>
+        <div class="form-msg" id="formMsg">Thanks &mdash; your request is ready to send once this site is connected to a live form or email address.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-brand">
+      <div class="brand-mark">GJ</div>
+      GJ ANGELES CONSTRUCTION
+    </div>
+    <div class="foot-links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="foot-note">&copy; 2026 GJ Angeles Construction &middot; Cabanatuan City, Nueva Ecija, Philippines</div>
+</footer>
+
+<script>
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 40){ header.classList.add('scrolled'); }
+    else { header.classList.remove('scrolled'); }
+  });
+
+  var toggle = document.getElementById('navToggle');
+  var links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', function(){
+    var open = links.style.display === 'flex';
+    links.style.display = open ? 'none' : 'flex';
+    links.style.cssText += open ? '' : 'position:absolute; top:100%; left:0; right:0; background:#1E1B18; flex-direction:column; padding:20px 32px; gap:18px; display:flex;';
+  });
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+
+  var form = document.getElementById('quoteForm');
+  var formMsg = document.getElementById('formMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var valid = true;
+    var fields = [
+      {id:'fname', check: function(v){return v.trim().length > 0;}},
+      {id:'fphone', check: function(v){return v.trim().length >= 7;}},
+      {id:'femail', check: function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());}},
+      {id:'ftype', check: function(v){return v.trim().length > 0;}},
+      {id:'fmsg', check: function(v){return v.trim().length > 0;}}
+    ];
+    fields.forEach(function(f){
+      var el = document.getElementById(f.id);
+      var err = document.getElementById('err-' + f.id);
+      if(!f.check(el.value)){
+        err.classList.add('show');
+        valid = false;
+      } else {
+        err.classList.remove('show');
+      }
+    });
+    if(valid){
+      formMsg.classList.add('show');
+      form.reset();
+    } else {
+      formMsg.classList.remove('show');
+    }
+  });
+  ['fname','fphone','femail','ftype','fmsg'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(){
+      document.getElementById('err-' + id).classList.remove('show');
+    });
+  });
+</script>
+
+</body>
+</html>
